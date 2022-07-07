@@ -11,26 +11,27 @@ function estadoModificadores(event) {
     let modificador = "";
 
     if(
-        event.key === "Scroll" || event.key === "ScrollLock"
+        event.getModifierState("Scroll") ||
+        event.getModifierState("ScrollLock")
     ){
         modificador = modificador + "ScrollLock" + " ";
     }
-    if (event.key === "Control"){
+    if (event.getModifierState("Control")){
         modificador = modificador + "Control" + " ";
     }
-    if (event.key==="Alt"){
+    if (event.getModifierState("Alt")){
         modificador = modificador + "Alt" + " ";
     }
-    if (event.key==="Meta"){
+    if (event.getModifierState("Meta")){
         modificador = modificador + "Meta" + " ";
     }
-    if (event.key==="Shift"){
+    if (event.getModifierState("Shift")){
         modificador = modificador + "Shift" + " ";
     }
-    if (event.key==="NumLock"){
+    if (event.getModifierState("NumLock")){
         modificador = modificador + "NumLock" + " ";
     }
-    if (event.key==="CapsLock"){
+    if (event.getModifierState("CapsLock")){
         modificador = modificador + "CapsLock" + " ";
     }
 
