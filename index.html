@@ -24,7 +24,8 @@
         <h2>Este demo funciona <u>sólamente</u> con el tecládo físico ⌨️</h2>
         <div id="key">
             <div class="filter">
-                Filtrar por:
+                <p>Filtrar por:</p>
+                
                 <input type="checkbox" name="keydown-cb" id="keydown-cb-id" checked>
                 <label for="keydown-cb">Keydown</label>
 
@@ -44,8 +45,6 @@
                 <!-- Opción limpiar resultados -->
                 <div class="limpiar-todo">
                     <button id="limpiar-todo-id">Limpiar Todo</button>
-                    <button id="ver-detalles-id">Mostrar todos los Key Codes</button>
-                    <span id="advertencia-dialog" style="display: none;">El API dialogo de advertencia aún no está soportado en este navegador <a href="#" id="descargar-csv-link">Haga clic acá para descargar</a> los detalles como CSV</span>
                 </div>
                 <div class="nota">
                     <h3>Haz clic en cualquier parte y luego presiona cualquier tecla ⌨️</h3>
@@ -84,33 +83,6 @@
             </div>
         </div>
     </div>
-
-    <dialog id="keyCodeDialog" style="width: 95%;">
-        <div>
-            <h1>Lista completa de códigos de teclado</h1>
-            <h3>La tabla de más abajo muestra una lista de todos las teclas posibles con código y otros detalles.</h3>
-            <button id="exportar-csv">Exportar a CSV</button>
-            <div class="contenido-dialogo">
-                <table id="tabla-key-code">
-                    <thead>
-                        <tr>
-                            <th>Key Name</th>
-                            <th>event.which</th>
-                            <th>event.key</th>
-                            <th>event.code</th>
-                            <th>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cuerpo-tabla-key-code">
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </dialog>
-    <menu style="float: right">
-        <button id="keyCodeDlgClsId" onclick="closeDialog()" class="close" value="Close">Close</button>
-    </menu>
 
 
     <script type="text/javascript" src="./source/index.js"></script>

@@ -14,28 +14,27 @@ function estadoModificadores(event) {
         event.key === "Scroll" || event.key === "ScrollLock"
     ){
         modificador = modificador + "ScrollLock" + " ";
-        console.log(modificador);
-    };
+    }
     if (event.key === "Control"){
         modificador = modificador + "Control" + " ";
-        console.log(modificador);
-    };
+    }
     if (event.key==="Alt"){
         modificador = modificador + "Alt" + " ";
-    };
+    }
     if (event.key==="Meta"){
         modificador = modificador + "Meta" + " ";
-    };
+    }
     if (event.key==="Shift"){
         modificador = modificador + "Shift" + " ";
-    };
+    }
     if (event.key==="NumLock"){
         modificador = modificador + "NumLock" + " ";
-    };
+    }
     if (event.key==="CapsLock"){
         modificador = modificador + "CapsLock" + " ";
-    };
+    }
 
+    console.log(modificador);
     return modificador;
 }
 
@@ -58,14 +57,14 @@ function agregarFila(event) {
         estadoModificadores(event)
     ];
 
-    for (let i = 0; i < data.length - 1; i++) {
+    for (let i = 0; i < data.length ; i++) {
         const cell = row.insertCell(i);
         cell.innerHTML = `<span class='${data[i]}'>${data[i]}</span>`;
     }
     window.scrollTo(0, document.body.scrollHeight);
 }
 
-const limpiarTodo = event=> {
+const limpiarTodo = (event)=> {
     document.getElementById("cuerpo-tabla-eventos").innerHTML="";
     document.getElementById("key-id").innerHTML = "";
     document.getElementById("escribe-aqui").value="";
@@ -73,7 +72,6 @@ const limpiarTodo = event=> {
 
 document.addEventListener("keydown", function(event){
     keydownOn && agregarFila(event);
-    console.log("Tecla presionada")
 })
 
 document.addEventListener("keyup", function(event){
