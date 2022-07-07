@@ -1,0 +1,123 @@
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+table thead tr {
+    text-align: left;
+}
+
+table thead tr.legend, table thead tr.legend th {
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+
+table thead tr th.type {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+table thead tr th.legacy {
+    background-color: #f8f3ef;
+    color: #000000;
+  }
+
+  table thead tr th.current {
+    background-color: #62da2a;
+    color: #000000;
+  }
+
+  table thead tr th.modifier {
+    background-color: #e7ad09;
+    color: #ffffff;
+  }
+
+  table th,
+  table td {
+    padding: 12px 15px;
+  }
+
+  table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+
+  table tbody tr:last-of-type {
+    border-bottom: 2px solid #3498db;
+  }
+
+  table tbody tr.active-row {
+    font-weight: bold;
+    color: #3498db;
+  }
+
+  .key {
+    margin: 5px;
+  }
+
+  .key mark {
+    font-size: 60px;
+    background-color: #ec10d1;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 5px;
+  }
+
+  .consejo {
+    margin-top: 5px;
+    margin-left: 5px;
+    color: #767474;
+  }
+
+  .resultados {
+    margin: 10px 5px 0px 5px;
+    background-color: #ebebeb;
+    padding: 10px;
+    border-radius: 4px;
+    overflow: auto;
+  }
+
+  .nota {
+    align-content: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .filter {
+    margin-left: 5px;
+  }
+
+  .v-false {
+    color: #ec8282;
+  }
+
+  .v-true {
+    color: green;
+  }
+
+  .git-ribbon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .input-here {
+    width: 80%;
+    height: 50px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #000000;
+    background-color: #ebebeb;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="git-ribbon">
+        <a href="https://github.com/MauricioTRP/KeyboardEvents"
+        target="_blank" loading="lazy" width="149" height="149"
+        src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149"
+        alt="Fork me on GitHub"
+        class="definir-clase"
+        data-recalc-dims="1"></a>
+    </div>
+
+    <div id="app" class="container">
+        <h1>Eventos de teclado con Javascript</h1>
+        <h5>Traducido y modificado de <a href="https://github.com/atapas/js-keyevents-demo">js-events-demo de atapas</a></h5>
+        <h2>Este demo funciona <u>sólamente</u> con el tecládo físico ⌨️</h2>
+        <div id="key">
+                Filtrar por:
+                <input type="checkbox" name="keydown-cb" id="keydown-cb-id">
+                <label for="keydown-cb">Keydown</label>
+
+                <input type="checkbox" name="keypress-cb" id="keypress-cb-id">
+                <label for="keypress-cb-id">Keypress</label>
+
+                <input type="checkbox" name="keyup-cb" id="keyup-cb-id">
+                <label for="keyup-cb-id">Keyup</label>
+
+
+            <div class="consejo">
+                Consejo: Los filtros que están arriba reflejaran el tipo de evento keyevent
+            </div>
+
+            <div class="resultados">
+
+                <!-- Opción limpiar resultados -->
+                <div class="limpiar-todo">
+                    <a href="#" id="limpiar-todo-id">Limpiar todo!</a>
+                </div>
+                <div class="nota">
+                    <h3>Haz clic en cualquier parte y luego presiona cualquier tecla ⌨️</h3>
+                </div>
+
+
+                <!-- fn Agregar fila  -->
+                <div id="key-id" class="note key"></div>
+                <!-- Tabla con resultados -->
+                <table id="event-table">
+                    <thead>
+                        <tr class="legend">
+                            <th></th>
+                            <th colspan="3" class="antiguo">Antiguo(Legacy)/Obsoleto</th>
+                            <th colspan="2" class="actual">Actual</th>
+                            <th colspan="5" class="modificadores">Modificadores</th>
+                        </tr>
+                        <tr>
+                            <th class="tipo">Tipo de Evento</th>
+                            <th class="antiguo">event.wich</th>
+                            <th class="antiguo">event.keyCode</th>
+                            <th class="antiguo">event.charCode</th>
+                            <th class="actual">Key</th>
+                            <th class="actual">Code</th>
+                            <th class="modificadores">Shift ?</th>
+                            <th class="modificadores">Alt ?</th>
+                            <th class="modificadores">Control ?</th>
+                            <th class="modificadores">Meta ?</th>
+                            <th class="modificadores">Estado del Modificador</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla-eventos">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./scripts/index.js" async></script>
+</body>
+</html>
