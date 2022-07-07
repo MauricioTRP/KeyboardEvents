@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keyboard Events</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Eventos de teclado</title>
+    <link rel="stylesheet" href="./source/style.css">
 </head>
 <body>
 
@@ -23,16 +23,17 @@
         <h5>Traducido y modificado de <a href="https://github.com/atapas/js-keyevents-demo">js-events-demo de atapas</a></h5>
         <h2>Este demo funciona <u>sólamente</u> con el tecládo físico ⌨️</h2>
         <div id="key">
+            <div class="filter">
                 Filtrar por:
-                <input type="checkbox" name="keydown-cb" id="keydown-cb-id">
+                <input type="checkbox" name="keydown-cb" id="keydown-cb-id" checked>
                 <label for="keydown-cb">Keydown</label>
 
-                <input type="checkbox" name="keypress-cb" id="keypress-cb-id">
+                <input type="checkbox" name="keypress-cb" id="keypress-cb-id" checked>
                 <label for="keypress-cb-id">Keypress</label>
 
-                <input type="checkbox" name="keyup-cb" id="keyup-cb-id">
+                <input type="checkbox" name="keyup-cb" id="keyup-cb-id" checked>
                 <label for="keyup-cb-id">Keyup</label>
-
+            </div>
 
             <div class="consejo">
                 Consejo: Los filtros que están arriba reflejaran el tipo de evento keyevent
@@ -42,7 +43,9 @@
 
                 <!-- Opción limpiar resultados -->
                 <div class="limpiar-todo">
-                    <a href="#" id="limpiar-todo-id">Limpiar todo!</a>
+                    <button id="limpiar-todo-id">Limpiar Todo</button>
+                    <button id="ver-detalles-id">Mostrar todos los Key Codes</button>
+                    <span id="advertencia-dialog" style="display: none;">El API dialogo de advertencia aún no está soportado en este navegador <a href="#" id="descargar-csv-link">Haga clic acá para descargar</a> los detalles como CSV</span>
                 </div>
                 <div class="nota">
                     <h3>Haz clic en cualquier parte y luego presiona cualquier tecla ⌨️</h3>
@@ -50,9 +53,9 @@
 
 
                 <!-- fn Agregar fila  -->
-                <div id="key-id" class="note key"></div>
+                <div id="key-id" class="nota key"></div>
                 <!-- Tabla con resultados -->
-                <table id="event-table">
+                <table id="tabla-eventos">
                     <thead>
                         <tr class="legend">
                             <th></th>
@@ -82,7 +85,34 @@
         </div>
     </div>
 
+    <dialog id="keyCodeDialog" style="width: 95%;">
+        <div>
+            <h1>Lista completa de códigos de teclado</h1>
+            <h3>La tabla de más abajo muestra una lista de todos las teclas posibles con código y otros detalles.</h3>
+            <button id="exportar-csv">Exportar a CSV</button>
+            <div class="contenido-dialogo">
+                <table id="tabla-key-code">
+                    <thead>
+                        <tr>
+                            <th>Key Name</th>
+                            <th>event.which</th>
+                            <th>event.key</th>
+                            <th>event.code</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla-key-code">
 
-    <script src="./scripts/index.js" async></script>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </dialog>
+    <menu style="float: right">
+        <button id="keyCodeDlgClsId" onclick="closeDialog()" class="close" value="Close">Close</button>
+    </menu>
+
+
+    <script type="text/javascript" src="./source/index.js"></script>
 </body>
 </html>

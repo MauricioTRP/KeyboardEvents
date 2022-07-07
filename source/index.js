@@ -1,41 +1,40 @@
-// Import Style
-import "../"
 
 // JS Code para la tabla
 
 let keydownOn = true;
 let keypressOn = true;
 let keyupOn = true;
-console.log("Está la wea??");
+
 
 // Esta función agrega uno a uno los modificadores activos al momento de presionar una tecla
 function estadoModificadores(event) {
     let modificador = "";
 
     if(
-        event.estadoModificadores("ScrollLock") ||
-        event.estadoModificadores("Scroll")
+        event.key === "Scroll" || event.key === "ScrollLock"
     ){
         modificador = modificador + "ScrollLock" + " ";
-    }
-    if (event.estadoModificadores("Control")){
+        console.log(modificador);
+    };
+    if (event.key === "Control"){
         modificador = modificador + "Control" + " ";
-    }
-    if (event.estadoModificadores("Alt")){
+        console.log(modificador);
+    };
+    if (event.key==="Alt"){
         modificador = modificador + "Alt" + " ";
-    }
-    if (event.estadoModificadores("Meta")){
+    };
+    if (event.key==="Meta"){
         modificador = modificador + "Meta" + " ";
-    }
-    if (event.estadoModificadores("Shift")){
+    };
+    if (event.key==="Shift"){
         modificador = modificador + "Shift" + " ";
-    }
-    if (event.estadoModificadores("NumLock")){
+    };
+    if (event.key==="NumLock"){
         modificador = modificador + "NumLock" + " ";
-    }
-    if (event.estadoModificadores("CapsLock")){
+    };
+    if (event.key==="CapsLock"){
         modificador = modificador + "CapsLock" + " ";
-    }
+    };
 
     return modificador;
 }
@@ -45,7 +44,7 @@ function agregarFila(event) {
     document.getElementById("key-id").innerHTML = `<mark>${event.key}</mark>`;
     const curIndx = document.getElementById("cuerpo-tabla-eventos").rows.length;
     const row = document.getElementById("cuerpo-tabla-eventos").insertRow(curIndx);
-    const.data = [
+    const data = [
         event.type,
         event.which,
         event.keyCode,
@@ -74,6 +73,7 @@ const limpiarTodo = event=> {
 
 document.addEventListener("keydown", function(event){
     keydownOn && agregarFila(event);
+    console.log("Tecla presionada")
 })
 
 document.addEventListener("keyup", function(event){
@@ -107,3 +107,5 @@ document
     .addEventListener("click", function(event){
         keydownOn = document.getElementById("keyup-cb-id").checked;
     })
+
+
