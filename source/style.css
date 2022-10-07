@@ -6,6 +6,7 @@ table {
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     width: 100%;
+    overflow: auto;
 }
 
 table thead tr {
@@ -104,7 +105,7 @@ table thead tr th.legacy {
   }
 
   .git-ribbon {
-    position: absolute;
+    position: relative;
     right: 0;
     top: 0;
   }
